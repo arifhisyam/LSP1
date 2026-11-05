@@ -8,7 +8,7 @@
     @vite('resources/css/app.css')
 </head>
 <body class="bg-gray-100 min-h-screen flex">
-    <aside class="w-60 bg-gray-900 text-gray-100 min-h-screen p-4 flex flex-col">
+    <aside class="w-60 bg-gray-900 text-gray-100 min-h-screen p-4 flex flex-col print:hidden">
         <h2 class="text-lg font-bold mb-6">Aplikasi Penjualan</h2>
 
         <nav class="space-y-1 flex-1">
@@ -22,10 +22,25 @@
             class="block px-3 py-2 rounded {{ request()->routeIs('kategori.*') ? 'bg-gray-700' : 'hover:bg-gray-800' }}">
             Kategori
         </a>
+
+        <a href="{{ route('produk.index') }}"
+        class="block px-3 py-2 rounded {{ request()->routeIs('produk.*') ? 'bg-gray-700' : 'hover: bg-gray-800' }}">
+        Produk
+    </a>
             @endif
+
+            <a href="{{ route('pelanggan.index') }}"
+               class="block px-3 py-2 rounded {{ request()->routeIs('pelanggan.*') ? 'bg-gray-700' : 'hover:bg-gray-800' }}">
+                Pelanggan
+            </a>
+
+            <a href="{{ route('penjualan.index') }}"
+            class="block px-3 py-2 rounded {{ request()->routeIs('penjualan.*') ? 'bg-gray-700' : 'hover:ng-gray-800' }}">
+            Transaksi
+        </a>
         </nav>
 
-        <div class="border-t border-grey-700 pt-4 text-sm">
+        <div class="border-t border-gray-700 pt-4 text-sm">
             <p class="font-semibold">{{ auth()->user()->nama_user }}</p>
             <p class="text-gray-400 mb-3">{{ ucfirst(auth()->user()->level )}}</p>
             <form method ="POST" action="{{ route('logout') }}">
@@ -38,10 +53,10 @@
     
     <main class="flex-1 p-8">
             @if (session('success'))
-                <div class="bg-green-100 text-green-800 p-3 rounded mb-4">{{ session('success') }}</div>
+                <div class="bg-green-100 text-green-800 p-3 rounded mb-4 print:hidden">{{ session('success') }}</div>
             @endif
             @if (session('error'))
-                <div class="bg-red-100 text-red-800 p-3 rounded mb-4">{{ session('error') }}</div>          
+                <div class="bg-red-100 text-red-800 p-3 rounded mb-4 print:hidden">{{ session('error') }}</div>          
             @endif
 
             @yield('content')

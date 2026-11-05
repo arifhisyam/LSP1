@@ -1,12 +1,12 @@
 <div class="space-y-4">
     <div>
         <label class="block text-sm mb-1">Nama Kategori</label>
-        <input type="text" name"nama_kategori"
-               value="{{ old('nama_kategori', $kategori->nama_kategori ??'') }}"
+        <input type="text" name="nama_kategori"
+               value="{{ old('nama_kategori', $kategori->nama_kategori ?? '') }}"
                class="w-full border rounded px-3 py-2">
                @error('nama_kategori')
                    <p class="text-red-600 text-sm mt-1">{{ $message }}</p>
-               @enderror>
+               @enderror
 
     </div>
 
