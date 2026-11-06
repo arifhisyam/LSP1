@@ -21,7 +21,8 @@ class Penjualan extends Model
         'diskon',
         'pembayaran',
         'kembalian',
-        'stok_akhir'
+        'stok_akhir',
+        'keterangan'
     ];
 
     protected function casts(): array

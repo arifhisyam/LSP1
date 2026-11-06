@@ -24,7 +24,7 @@
         </a>
 
         <a href="{{ route('produk.index') }}"
-        class="block px-3 py-2 rounded {{ request()->routeIs('produk.*') ? 'bg-gray-700' : 'hover: bg-gray-800' }}">
+        class="block px-3 py-2 rounded {{ request()->routeIs('produk.*') ? 'bg-gray-700' : 'hover:bg-gray-800' }}">
         Produk
     </a>
             @endif
@@ -35,8 +35,13 @@
             </a>
 
             <a href="{{ route('penjualan.index') }}"
-            class="block px-3 py-2 rounded {{ request()->routeIs('penjualan.*') ? 'bg-gray-700' : 'hover:ng-gray-800' }}">
+            class="block px-3 py-2 rounded {{ request()->routeIs('penjualan.*') ? 'bg-gray-700' : 'hover:bg-gray-700' }}">
             Transaksi
+        </a>
+
+        <a href="{{ route('user.index') }}"
+        class="block px-3 py-2 rounded {{ request()->routeIs('user.*') ? 'bg-gray-700' : 'hover:bg-gray-700' }}">
+        User
         </a>
         </nav>
 

@@ -79,14 +79,14 @@ class ProdukController extends Controller
     private function rules(?Produk $produk = null): array
     {
         return [
-            'id_kategori' => 'required|exists:kategori, id_kategori',
+            'id_kategori' => 'required|exists:kategori,id_kategori',
             'kode_produk' => [
                 'required', 'string', 'max:50',
                 Rule::unique('produk', 'kode_produk')->ignore($produk?->id_produk, 'id_produk'),
             ],
 
             'nama_produk' => 'required|string|max:150',
-            'deskripsi'   => 'nullablez|string',
+            'deskripsi'   => 'nullable|string',
             'harga_beli'  => 'required|numeric|min:0',
             'harga_jual'  => 'required|numeric|min:0',
             'stok'        => 'required|numeric|min:0',

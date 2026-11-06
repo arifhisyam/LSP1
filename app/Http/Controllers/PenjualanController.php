@@ -64,7 +64,7 @@ class PenjualanController extends Controller
 
                 if ($produk->stok < $jumlah ) {
                     throw ValidationException::withMessages([
-                        'item' => "Stok {$produk->nama_produk} tidak cukup (sisa{$produk->stok}).",
+                        'items' => "Stok {$produk->nama_produk} tidak cukup (sisa {$produk->stok}).",
 
                     ]);
 
